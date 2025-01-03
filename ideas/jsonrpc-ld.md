@@ -1,4 +1,6 @@
-# concept: jsonLD style-rpc
+@hspaay my idea so far. https://github.com/w3c/web-thing-protocol/issues/34#issuecomment-2568583540
+
+## concept: equivalent jsonLD style-rpc
 assumption: this proposed web-thing-protocol (WoTP) is an **application axiomatization** of *domain axiomatization*:[ The WoT Thing Description](https://www.w3.org/TR/wot-thing-description11/)
 ## goals
 1. stay as close as possible to the semantics & ontology of
@@ -47,9 +49,9 @@ same as a Request except "id" is moved to "params" as "messageID"
         "params": {
             "thingID": "string",
             ...
-+++             "messageID": "string
++++     "messageID": "string"
         },
----        "id": "string"
+---   "id": "string"
 }
 
 ====== becomes ====== 
@@ -60,7 +62,7 @@ same as a Request except "id" is moved to "params" as "messageID"
         "params": {
             "thingID": "string",
             ...
-            "messageID": "string
+            "messageID": "string"
         }
 }
 
@@ -145,8 +147,8 @@ example 3:
 ====== notification example ====== 
   
 --> { 
-        "jsonrpc": "2.0",
-        "method": "string", 
+        "wotp": "<version>", 
+        "operation": "string", 
         "params": {
             "thingID": "string",
             ...
