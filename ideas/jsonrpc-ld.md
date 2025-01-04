@@ -45,7 +45,6 @@ my other assumptions/ideas
 |               messageID | id                              | msgID                        |
 
 example 1:
-
 ```
 --> { 
         "jsonrpc": "2.0", 
@@ -80,6 +79,7 @@ example 1:
 
 same as a Request except "id" is moved to "params" as "messageID"
 
+example 2:
 ```
 {
     "jsonrpc": "2.0",
@@ -87,7 +87,7 @@ same as a Request except "id" is moved to "params" as "messageID"
     "params": {
         "thingID": "string",
         ...
-+   "msgID": "string"
++   "messageID": "string"
     },
 -   "id": "string"
 }
@@ -130,8 +130,7 @@ same as a Request except "id" is moved to "params" as "messageID"
 |            correlationID | result.correlationID            | corrID                       |
 |                messageID | id                              | msgId                        |
 
-example 2:
-
+example 3:
 ```
 <-- { 
         "jsonrpc": "2.0", 
