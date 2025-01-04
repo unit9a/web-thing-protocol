@@ -165,3 +165,32 @@ example 3:
         "id": "string"
     }
 ```
+
+## establish a message context
+@benfrancis  
+I am chewing on the idea of replacing the json-rpc version member with a json-LD style "@context" and use in a similar way "@context" is use in Wot thing description [example 1](https://www.w3.org/TR/wot-thing-description11/#simple-thing-description-sample)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant wot1 as thing1
+    participant wot2 as thing2
+
+    critical Negotiate "@context for rpc session"
+        wot1->> wot2: { wotp:"0.1",<br>params = <@context value in example 1>}
+        alt success
+            wot2->> wot1: { wotp:"0.1", result = {wotpSessionID: <short uuid>, contextInfo:{<selected context>}}}
+
+            Note right of wot1: both WoT entities map the <wotpSessionID> to @context value for the session
+
+            par thing1 messages 
+                wot1->> wot2: { @wotp: "<wotpSessionID>"... }
+            and thing2 messages
+                wot2->> wot1: { @wotp: "<wotpSessionID>"... }
+            end
+
+        else fail
+            wot2->> wot1: { wotp:"0.1", result :{error: "no supported rpc context...", output: ...}}
+        end
+    end
+```
