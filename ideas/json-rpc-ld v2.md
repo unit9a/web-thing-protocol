@@ -20,8 +20,7 @@ this issue was created because the discord link on[ w3c Web Thing Protocol Commu
 2. be fully browser & Deno.js compatible
 3. (low priority/personal) explore the use of knowledge graphs to generate
    documentation by creating a web-thing-protocol (WoTP) **application
-   axiomatization** of _domain
-   axiomatization_:[The WoT Thing Description](https://www.w3.org/TR/wot-thing-description11/)
+   axiomatization** of _domain axiomatization_:[The WoT Thing Description](https://www.w3.org/TR/wot-thing-description11/)
 
 ## Json-rpc v2.0 system extension requirements
 
@@ -120,7 +119,7 @@ goal
 #### Example 3
 
 ```
---> { 
+-->  or <-- { 
         "jsonrpc": "2.0", 
         "method": "rpc.wotp",
 
